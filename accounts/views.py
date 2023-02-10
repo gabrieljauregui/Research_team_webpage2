@@ -38,12 +38,6 @@ class MyLoginView(LoginView):
         messages.success(self.request, f"Hello, {form.user.first_name}!")
         return super().form_valid(form)
 
-    def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            return redirect("home")
-        return super().dispatch(request, *args, **kwargs)
-
-
 def logout_view(request):
     logout(request)
     messages.success(request, "You have successfully logged out.")

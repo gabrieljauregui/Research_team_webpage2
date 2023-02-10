@@ -90,12 +90,13 @@
 
 {% if user.is_authenticated %}
 <li>
-  <div style="font-size: 1.2rem; color: blue; text-align: right; padding-rigth: 20px">
+  <div style="font-size: 1.6rem; color: blue; text-align: center; padding-rigth: 20px">
     Welcome {{ user.first_name }}!
   </div>
 {% endif %}
-{% if logout_successful %}
-  <div class="alert alert-success">You have successfully logged out.</div>
+
+{% if user.logout_successful %}
+  <div style="font-size: 1.2rem; color: blue; text-align: right; padding-rigth: 20px"> You have successfully logged out.</div>
 {% endif %}
 
 
@@ -228,7 +229,7 @@ nav .fa-bars {
   
  
 <em><h1 id="about" >About Us </h1></em>
-<p>  We are a group of students and neuropsychologists interested in Cross-cultural Neuropsychology.<br> We are located in Córdoba, Argentina. <br> <br><br>
+<p>  We are a group of students and neuropsychologists interested in Cross-cultural Neuropsychology.<br> We are located in Córdoba, Argentina. <br> 
 <!-- Images cards -->
 <div class="container">
   <div class="row">
