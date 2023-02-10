@@ -1,0 +1,351 @@
+{% extends "base.html" %}
+{% block content %} 
+
+{% load static %} 
+
+<title>MUNSapp</title>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+  crossorigin="anonymous"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
+  rel="stylesheet"
+/>
+</head>
+
+<body>
+
+<!-- icons from fontawesome 
+<script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+<!-- Bootstrap Bundle with Popper 
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"
+></script>
+<script>
+  var navLinks =document.getElementById("navLinks");
+
+  function showMenu(){
+    navLinks.style.right = "0";
+  }
+    function hideMenu(){
+    navLinks.style.right = "-200px";
+  }
+</script>
+
+</body>
+
+<head>
+  <html lang="en">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- This section is the nav bar  
+  
+  <link rel="stylesheet" href="{% static 'menu.css' %}">
+ 
+     <html lang="en">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+ 
+<!-- icons from fontawesome
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    
+<!-- Bootstrap Popper Scripts
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+</head>
+
+<body>
+ 
+<!--Javascript for Toggle Menu
+<script>
+  var navLinks =document.getElementById("navLinks");
+
+  function showMenu(){
+    navLinks.style.right = "0";
+  }
+    function hideMenu(){
+    navLinks.style.right = "-200px";
+  }
+</script>
+
+</body>
+  
+<br><br><br><br><br><br>
+<div class="box">
+  <br><h3>
+    Welcome to the MUNSapp main menu<br><br> </h3>
+  <h5>Log in to start using our tools </h5>
+</div>
+    
+
+
+<br>
+  {% block nav %}
+  
+  <nav class="col-12 col-md-3 bg-light sidebar mx-auto ">
+    <div class="sidebar-sticky"> 
+      
+    
+      <ul class="nav flex-column nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active text-center"  <a href="{% url "login" %}">Login</a> <br>
+        </li>
+        <li>
+          <a class="nav-link active text-center"  <a href="{% url "signup" %}">Sign up</a>
+          </a>
+        </li><li class="nav-item ">
+          <a class="nav-link text-center" href="#">
+             Score the MUNS
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-center" href="#">
+           Learn how to administer the MUNS
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-center" href="#">
+           Learn how to score the MUNS
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-center" href="#">
+           Read the MUNS papers
+          </a>
+        </li>
+            </ul>
+    </div></nav>
+
+
+
+  
+  <body>
+    <style>
+      body {
+        background-color: #ADD8E6;} /* This is a light blue color */
+        * {
+          margin: 0;
+          padding: 0;
+          font-family: 'Montserrat', sans-serif;
+      }
+      
+      a {
+          color: black;
+      }
+      p {
+          color: black;
+      }
+      
+      span {
+          color: black;
+          text-decoration: none;
+          font-size: 32px;
+          text-align: left;
+          z-index: 2;
+      }
+      
+      .header {
+          background-color: rgb(7, 113, 155);
+          min-height: 10vh;
+          width: 100%;
+          /* background-image: linear- gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url();*/
+      }
+      
+      nav {
+          display: flex;
+          padding: 2% 6%;
+          justify-content: space-between;
+          align-items: center;
+          background-color: white;
+      }
+      
+      nav img {
+          width: 350px;
+      }
+      
+      .nav-links {
+          flex: 1;
+          text-align: right;
+      }
+      
+      .nav-links ul li {
+          list-style: none;
+          display: inline-block;
+          padding: 8px 12px;
+          position: relative;
+      }
+      
+      .nav-links ul li a {
+          color: black;
+          text-decoration: none;
+          font-size: 20px;
+      }
+      
+      .nav-links ul li::after {
+          content: "";
+          width: 0%;
+          height: 2px;
+          background: red;
+          display: block;
+          margin: auto;
+          transition: 0.5s;
+      }
+      
+      .nav-links ul li:hover::after {
+          width: 100%;
+      }
+      
+      .text-box {
+          width: 90%;
+          color: black;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+      }
+      
+      .text-box h1 {
+          font-size: 62px;
+      }
+      
+      nav .fa-bars {
+          display: none;
+      }
+      
+      nav .fa-circle-xmark {
+          display: none;
+      }
+      
+      @media(max-width: 700px) {
+          .nav-links ul li {
+              display: block;
+          }
+          .nav-links {
+              position: absolute;
+              background: rgb(7, 113, 155);
+              height: 100vh;
+              width: 200px;
+              top: 0;
+              right: -200px;
+              text-align: left;
+              z-index: 2;
+              transition: 1s;
+          }
+          nav .fa-bars {
+              display: block;
+              color: black;
+              margin: 10px;
+              font-size: 22px;
+              cursor: pointer;
+          }
+          nav .fa-circle-xmark {
+              display: block;
+              color: white;
+              margin: 10px;
+              font-size: 32px;
+              cursor: pointer;
+          }
+          .nav-links ul {
+              padding: 30px;
+          }
+      }
+</style>
+    </body>
+    
+
+
+{% endblock %}
+</html>
+
+
+{% endblock %}
+
+
+-->

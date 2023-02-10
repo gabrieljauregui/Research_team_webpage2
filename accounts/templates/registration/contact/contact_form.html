@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+  <section class="contact">
+
+    <style>
+  
+      .contact {
+        text-align: center;
+      }
+      #Contact us {
+        color: #333;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      .contact p {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .contact form {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .contact form label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+      .contact form input[type="text"],
+      .contact form input[type="email"],
+      .contact form textarea {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px;
+        border: 1px solid #ddd;
+        margin-bottom: 16px;
+      }
+      .contact form button[type="submit"] {
+        border-radius: 4px; 
+        background-color: blue;
+        color: white;
+        font-size: 18px;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+    
+<br><br><em><h1 id="Contact us">Contact us</h1></em>
+<p>Send us a message using the form below:</p>
+<form action="{% url 'contact_form' %}" method="post">
+  {% csrf_token %}
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name"><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br>
+  <label for="message">Message:</label>
+  <textarea id="message" name="message"></textarea><br>
+  <button type="submit">Send Message </button>
+</form>
+
+</section>
+{% endblock %}

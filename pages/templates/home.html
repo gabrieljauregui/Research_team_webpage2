@@ -1,0 +1,597 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<html>
+<head>
+<meta name="viewport" content="with=device-width, initial-scale=1.0">
+
+<title>Cortex Home</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+<script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  
+<!--Javascript for Toggle Menu-->
+
+<script>
+    var navLinks =document.getElementById("navLinks");
+
+    function showMenu(){
+      navLinks.style.right = "0";
+    }
+      function hideMenu(){
+      navLinks.style.right = "-200px";
+    }
+   
+
+</script>
+
+
+
+
+<!-- This is the background of the whole HTML page --> 
+<style>
+  body {
+   background-color: white;
+  }
+
+  p { color: black;}
+  h1 { color: black}
+  h2 { color: black}
+
+  
+  .small-carousel {
+    width: 100%;
+    height: 50%;
+    margin: 1px auto;
+    z-index: 1;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    left: 120hv;
+    color: white;
+    padding: 10px;
+    font-size: 28px;
+    z-index: 1;}
+</style>
+
+ </body>
+
+ <!--  Carousel --> 
+
+<br><br><br>
+<script>
+  $(document).ready(function(){
+   $("#carouselExampleControls").carousel();
+ });
+</script>
+
+
+{% if user.is_authenticated %}
+<li>
+  <div style="font-size: 1.2rem; color: blue; text-align: right; padding-rigth: 20px">
+    Welcome {{ user.first_name }}!
+  </div>
+{% endif %}
+{% if logout_successful %}
+  <div class="alert alert-success">You have successfully logged out.</div>
+{% endif %}
+
+
+<div id="carouselExampleControls" class="carousel slide small-carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="7000" >
+  <div class="carousel-inner" >
+    <div class="carousel-item active" >
+      <img src="{% static 'carouselImg26.png' %}" class="d-block w-100 img-fluid" alt="carouselImg26" >
+           <div class="carousel-caption d-block w-100" >
+        <span style="background-color: black"> </span>
+        <br>
+        <span style="background-color: lightblue; font-size: 40px" >  <br><br> <em> <em> </span>
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'carouselImg34.png' %}" class="d-block w-100 img-fluid" alt="carouselImg33">     
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'carouselImg35.png' %}" class="d-block w-100 img-fluid" alt="carouselImg33">     
+    </div>
+
+     <!-- Carousel buttons  --> 
+         
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+  <style>
+  .small-carousel {
+      width: 100%; /* adjust to desired size */
+      height: 100px; /* adjust to desired size */
+      margin: 0 auto;
+    }
+    
+  img.img-fluid {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    
+  .carousel-caption span {
+      font-size: 20px; /* adjust to desired font size */
+    }
+  
+  h2 {
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff
+  }
+
+ 
+  nav {
+    background-color: white;
+    color: blue;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    font-size: 16px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    margin: 0;
+}
+
+nav .fa-bars {
+  display: block;
+  color: black;
+  margin: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+@media(max-width: 700px) {
+    .nav-links ul li {
+        display: block;
+    }
+    .nav-links {
+        position: absolute;
+        background: rgb(7, 113, 155);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa-bars {
+        display: block;
+        color: black;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    nav .fa-circle-xmark {
+        display: block;
+        color: black;
+        margin: 10px;
+        font-size: 32px;
+        cursor: pointer;
+    }
+    .nav-links ul {
+        padding: 30px;
+    }
+}
+
+</style>
+
+
+     <!-- Images cards -->
+
+  
+  <br><br><br>
+
+  <div>
+<section class="about">
+ 
+  <br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br> 
+  
+  
+ 
+<em><h1 id="about" >About Us </h1></em>
+<p>  We are a group of students and neuropsychologists interested in Cross-cultural Neuropsychology.<br> We are located in Córdoba, Argentina. <br> <br><br>
+<!-- Images cards -->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <!-- Card deck -->
+      <div class="card-deck">
+        <!-- first card -->
+        <div class="card">
+          <img src="{% static 'about us2.jpg' %}" alt="about_img1" class="card-img-top custom-img">
+          <div class="card-body">
+            <p class="card-text">We attended the SLAN conference in Uruguay. October 2022</p>
+      
+          </div>
+        </div>
+        <!-- second card -->
+        <div class="card">
+          <img src="{% static 'about_img2.jpeg' %}" alt="about_img2" class="card-img-top custom-img">
+          <div class="card-body">
+            <p class="card-text">The team charging batteries, a day in the mountains, 2022.</p>
+          </div>
+        </div>
+        <!-- third card -->
+        <div class="card">
+          <img src="{% static 'about_img3.jpeg' %}" alt="about_img3" class="card-img-top custom-img">
+          <div class="card-body">
+            <p class="card-text">Alberto Fernández visiting the University of Edimburg, 2022.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-deck d-none">
+        <!-- fourth card -->
+        <div class="card">
+          <img src="{% static 'about_us4.jpeg' %}" alt="about_img1" class="card-img-top custom-img">
+          <div class="card-body">
+            <p class="card-text">Meeting Bernice Marcopulos's team at the INS San diego meeting 2023</div></p>
+        </div>
+        <!-- fifth card -->
+        <div class="card">
+          <img src="{% static 'about_us5.jpeg' %}" alt="about_img2" class="card-img-top custom-img">
+          <div class="card-body">
+            <p class="card-text">We attended the INS meeting in Brazil, 2019</p>
+          </div>
+        </div>
+        <!-- sixth card -->
+        <div class="card">
+          <img src="{% static 'about_us6.jpeg' %}" alt="about_img3" class="card-img-top custom-img">
+          <div class="card-body">
+            <p class="card-text">Meeting our collaborators from the LMU at Los Angeles, 2019.</p>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+  <div>
+    ...
+    <!-- Navigation buttons -->
+    <div class="row mt-3">
+      <div class="col-6">
+        <button type="button" class="btn btn-secondary btn-block previous">Previous</button>
+      </div>
+      <div class="col-6">
+        <button type="button" class="btn btn-secondary btn-block next">Next</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const previousBtn = document.querySelector('.btn-block.previous');
+    const nextBtn = document.querySelector('.btn-block.next');
+    const cardDecks = document.querySelectorAll('.card-deck');
+    let currentDeck = 0;
+  
+    previousBtn.addEventListener('click', function() {
+      if (currentDeck === 1) {
+        cardDecks[currentDeck].classList.add('d-none');
+        cardDecks[currentDeck = 0].classList.remove('d-none');
+      }
+    });
+  
+    nextBtn.addEventListener('click', function() {
+      if (currentDeck === 0) {
+        cardDecks[currentDeck].classList.add('d-none');
+        cardDecks[currentDeck = 1].classList.remove('d-none');
+      }
+    });
+  </script>
+  
+  <style>
+
+
+/* General styles for the cards */
+.card {
+    width: 300px;
+    height: 350px;
+    overflow: hidden;
+    margin: 10px;
+    display: inline-block;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+    .card {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  
+    .card-img-top {
+      height: 12rem;
+      object-fit: cover;
+    }
+  }
+  
+  
+  .card-deck.slide-left {
+    transform: translateX(-100%);
+  }
+  
+  .card-deck.slide-right {
+    transform: translateX(100%);
+  }
+  
+</style>
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+
+
+    <div 
+          
+    <section class="Research">
+    <em><h1 id="research" >Research </h1></em>
+
+
+    we are currently developing cross-cultural validity of <br>The Multicultural Nuropsychological Scale (MUNS),<br> a valid and reliable neuropsychological battery. 
+    <br> <br>Make inferences of a person cognitive functioning,<br> <br>¿Best part? It's free
+    <br><br><br><br>
+
+    <style>
+      .Donate {
+        text-align: center;
+      }
+      #donate {
+        color: black;
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+      .Donate p {
+        font-size: 18px;
+        line-height: 1.5;
+        color: black;
+        margin-bottom: 20px;
+      }
+      .Donate a {
+        color: #008080;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .Donate ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .Donate li {
+        font-size: 18px;
+        line-height: 1.5;
+        color: black;
+        margin: 0;
+        padding-left: 20px;
+      }
+      .Donate li:before {
+        content: "•";
+        color: black;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+      </style>
+
+    
+
+
+    <div 
+    <section class="Donate">
+      
+      <em><h1 id="donate" >Donate </h1></em>
+      <p> Thank you for visiting our neuropsychology lab website.<br><br>
+      At Cortex, we are dedicated to developing free tools and resources for neuropsychologists<br>
+      to use in their research and practice. <br><br>
+
+      Our work has a meaningful impact on the field of neuropsychology,<br>
+      and generous donors like you can help us to continue and accelerate our research and development.<br>
+      Your support helps us create new tools and resources that benefit neuropsychologists around the world.<br><br>
+      <ul>
+        <li><a href="#">Donate online through our website here!</a></li> <br>
+        <li> <a href="/contact/"> Contact us to discuss other donation options </a> </li> <br><br>
+        
+
+      </ul>
+
+        We are grateful for any support you are able to provide. <br> <br>
+        Thank you for considering a donation to Cortex and for your dedication to advancing the field of neuropsychology. <br> <br>
+        Together, we can make a difference. </p>
+
+    </div>
+
+    <br><br><br><br><br><br>
+
+ <style>
+  .contact {
+    text-align: center;
+  }
+  #Contact us {
+    color: black;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .contact p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: black;
+    margin-bottom: 20px;
+  }
+  .contact form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .contact form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  .contact form input[type="text"],
+  .contact form input[type="email"],
+  .contact form textarea {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 16px;
+  }
+  .contact form button[type="submit"] {
+    border-radius: 4px;
+    background-color: #008080;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    
+  a {
+      color: black;
+  }
+  p {
+      color: black;
+  }
+  
+  span {
+      color: black;
+      text-decoration: none;
+      font-size: 32px;
+      text-align: left;
+      z-index: 2;
+  }
+  }
+</style>
+
+<section class="contact">
+  <em><h1 id="Contact us">Contact us</h1></em>
+  <p>Send us a message using the form below:</p>
+  <form action="/contact_success" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea><br>
+    <button type="submit">Send Message </button>
+  </form>
+
+    <br><br><br><br><br><br><br><br><br>
+    
+  <br><br><br><br><br><br><br>
+</section>
+
+
+
+
+
+<section> 
+  <div> 
+    <h3> ⓒ By Gabriel Jáuregui and Julian Garione </h3> 
+  </div>
+</section>
+
+<style>
+  h3 {
+    color: black;
+    text-align: center;
+  }
+</style>
+  
+  <br><br><br><br><br>
+</style>
+
+</section>
+
+
+
+{% endblock content %}
+
+<!-- About section images   
+<section class="aboutImgs">
+
+    <div class="row">
+        <div class="AboutImgs-col">
+        <img src="static/AboutImg1.png">
+        <div class="layer">
+          <h3>Alzheimer</h3>
+  </div>
+</div>
+</div>
+
+</section>
+ 
+  </p>
+</div>
+
+--> 
+
+ <!-- JavaScript function to make image change
+ 
+ </html>
+ <script>
+  var carousel = document.getElementById('carousel');
+  var items = carousel.getElementsByClassName('carousel-item');
+  
+  var currentItem = 0;
+  
+  setInterval(function() {
+    items[currentItem].style.opacity = 0;
+    currentItem = (currentItem + 1) % items.length;
+    items[currentItem].style.opacity = 1;
+  }, 2500); 
+ </Script> 
+
+ This is the link to the block of content  --> 
+
+

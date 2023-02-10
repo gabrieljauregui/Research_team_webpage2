@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="\static\style.css" />
+
+
+</head>
+<br><br><br>
+<h4 class="text-center mb-4">Please, log in to continue <h4> 
+ 
+<div class="container mt-5">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6"><div class="box">
+        <h1 class="text-center mb-4">Log in</h1>
+
+        
+
+        <form method="post" action="{% url 'login' %}">
+
+
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username" class="form-label"><strong>Username</label>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              id="username"
+              aria-describedby="emailHelp"
+            /><br>
+          </div>
+          <div class="form-group">
+            <label for="password" class="form-label">Password</strong></label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+            />
+            <br />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="forgot"<a class="btn btn-secondary" style="background-color: rgb(7, 113, 185);">
+           <href="{% url 'password_reset' %}"> Forgot your password? </a>  </button>
+       
+      
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<body>
+  <style>
+    body {
+      background-color: #ADD8E6; /* This is a light blue color */
+    }
+    .box {
+      background-color: white; 
+    }
+  </style>
+  </body>
+  
+
+  </form> 
+{% endblock %}
+

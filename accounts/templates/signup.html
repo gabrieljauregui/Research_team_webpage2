@@ -1,0 +1,111 @@
+
+<title> Sign Up </title>
+{% extends 'base.html' %}
+{% block content %}
+<br />
+<h1 class="text-center mb-4">Please, Sign up</h1>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="box">
+        
+<p class="text-muted">* All fields are required</p>
+<p class="text-muted">* username must be unique</p>
+<p class="text-muted">* password must be at least 8 characters long and contain at least one number and one letter</p>
+
+        <form method="post" action="{% url 'signup' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username" class="form-label"
+              ><strong>Username</strong></label> <input type="text" name="username" class="form-control" placeholder="Enter your username" required>
+           
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label"><strong>Email</strong>*</label>
+              <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+          </div>          
+          <div class="form-group">
+            <label for="password" class="form-label"
+              ><strong>Password</strong>*</label
+            >
+            <input type="password" class="form-control" name="password1" placeholder="Enter your password" required>
+          </div>
+          <div class="form-group">
+            <label for="password_confirm" class="form-label"
+              ><strong>Confirm Password</strong>*</label>
+              <input type="password" class="form-control" name="password2" placeholder="Confirm your password" required>
+          </div>
+          <div class="form-group">
+            <label for="age" class="form-label"><strong>Age</strong></label>
+            <input type="number" class="form-control" name="age" placeholder="Enter your age">
+          </div>
+          <div class="form-group">
+            <label for="first_name" class="form-label"><strong>First Name</strong></label>
+            <input type="text" class="form-control" name="first_name" placeholder="Enter your first name">
+        </div>        
+          <div class="form-group">
+            <label for="last_name" class="form-label"
+              ><strong>Last Name</strong></label
+            >
+            <input type="text" class="form-control" name="last_name" placeholder="Enter your last name">
+          </div>
+          <div class="form-group">
+            <label for="job" class="form-label"><strong>Job</strong></label>
+            <input type="text" class="form-control" name="job" placeholder="Enter your current job or occupation">
+          </div>
+
+          <div class="form-group">
+            <label for="educational_achievement" class="form-label"
+              ><strong>Educational Achievement</strong></label
+            >
+            <input type="text" name="educational_achievement" id="educational_achievement" class="form-control" placeholder="Enter your highest educational achievement" required>
+          </div>
+          <div class="form-group">
+            <label for="description" class="form-label"
+              ><strong>Description</strong></label
+            >
+            <textarea name="description" id="description" class="form-control" placeholder="Enter a brief description about yourself" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="objectives" class="form-label"
+              ><strong>Objectives</strong></label
+            >
+            <textarea name="objectives" id="objectives" class="form-control" placeholder="Enter your objectives" required></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  body {
+    background-color: whitesmoke;
+  }
+  .box {
+    background-color: white;
+  }
+  /* Add some space between each form group */
+  .form-group {
+      margin-bottom: 1.5rem;
+  }
+  /* Add some space within the input field */
+  .form-control {
+      padding: 0.75rem 0.75rem;
+  }
+  /* Adjust the width of the input field on small screens */
+  @media (max-width: 600px) {
+      .form-control {
+          min-width: 200px;
+      }
+  
+  }
+</style>
+</form>
+{% endblock %}
