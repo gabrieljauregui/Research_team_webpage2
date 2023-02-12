@@ -1,8 +1,22 @@
+#views.py
 from django.shortcuts import render, redirect
-from .models import WordList
-from django.contrib import messages
-from django.contrib.auth import get_user_model
-from django.contrib.auth.decorators import login_required
+from .forms import words_memory_subtest
+
+# muns_app/views.py
+
+def words_memory_subtest_view(request):
+    if request.method == 'POST':
+        form = words_memory_subtest(request.POST)
+        if form.is_valid():
+            # Handle the form submission
+            # ...
+            return redirect('success')
+    else:
+        form = words_memory_subtest()
+    return render(request, 'muns_app/words_memory_subtest.html', {'form': form})
+
+def success_view(request):
+    return render(request, 'success.html')
 
 
 def menu_view(request):
@@ -13,7 +27,7 @@ def menu_view(request):
     ]
     return render(request, "menu.html", {"menu_items": menu_items})
 
-
+""""
 def forgot_password(request):
     if request.method == "POST":
         # Process the form submission
@@ -63,3 +77,5 @@ def password_reset_request(request):
     else:
         form = PasswordResetRequestForm()
     return render(request, "authenticate/password_reset_form.html", {"form": form})
+
+""" 

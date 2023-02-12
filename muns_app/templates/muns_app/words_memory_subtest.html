@@ -1,0 +1,596 @@
+{% extends "muns_app/success.html" %}
+<!-- templates/muns_app/words_memory_subtest.html -->
+
+<head>
+     
+
+
+
+</head>
+
+{% block content %}
+
+
+  
+<div class="btn-card">
+
+<div style="display: flex; text-aling:left; flex-end;">
+  <h4>Word Learning Subtest (WL)</h4>
+</div>
+  
+  <div class="btn-card">
+        <p> All ready? Go to the next subtest</p> <br>
+        <button type="submit" class="btn btn-primary">Next subtest</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="outer-card2">
+  
+  <div class="outer-card">
+    
+    <div class="container">
+    <div class="row">
+      
+    <div class="col-sm-4">
+
+      <div class="card">
+        <div <h3 class="card-title">Trial 1</h3>
+        </div>
+
+          
+          <div class="card-body">
+          <form method="post">
+               {% csrf_token %}
+    <div class="form-group row">
+      <label for="id_stone1" class="col-sm-4 col-form-label">Stone</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_stone1" name="stone1">
+          <label class="custom-control-label" for="id_stone1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_ear1" class="col-sm-4 col-form-label">Ear</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_ear1" name="ear1">
+          <label class="custom-control-label" for="id_ear1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_neck1" class="col-sm-4 col-form-label">Neck</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_neck1" name="neck1">
+          <label class="custom-control-label" for="id_neck1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_cloud1" class="col-sm-4 col-form-label">Cloud</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_cloud1" name="cloud1">
+          <label class="custom-control-label" for="id_cloud1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_foot1" class="col-sm-4 col-form-label">Foot</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_foot1" name="foot1">
+          <label class="custom-control-label" for="id_foot1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_seed1" class="col-sm-4 col-form-label">Seed</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_seed1" name="seed1">
+          <label class="custom-control-label" for="id_seed1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_tongue1" class="col-sm-4 col-form-label">Tongue</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_tongue1" name="tongue1">
+          <label class="custom-control-label" for="id_tongue1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_sand1" class="col-sm-4 col-form-label">Sand</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_sand1" name="sand1">
+          <label class="custom-control-label" for="id_sand1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_fire1" class="col-sm-4 col-form-label">Fire</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_fire1" name="fire1">
+          <label class="custom-control-label" for="id_fire1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_nose1" class="col-sm-4 col-form-label">Nose</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_nose1" name="nose1">
+          <label class="custom-control-label" for="id_nose1"></label>
+        </div>
+      </div>
+    </div>
+        <div class="form-group row">
+      <label for="id_tree1" class="col-sm-4 col-form-label">Tree</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_tree1" name="tree1">
+          <label class="custom-control-label" for="id_tree1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_hand1" class="col-sm-4 col-form-label">Hand</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_hand1" name="hand1">
+          <label class="custom-control-label" for="id_hand1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_wind1" class="col-sm-4 col-form-label">Wind</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_wind1" name="wind1">
+          <label class="custom-control-label" for="id_wind1"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_knee1" class="col-sm-4 col-form-label">Knee</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_knee1" name="knee1">
+          <label class="custom-control-label" for="id_knee1"></label>
+        </div>
+      </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div></div>
+    </div>
+
+
+
+
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+      
+    <div class="col-sm-4">
+
+      <div class="card">
+        <div <h3 class="card-title">Trial 2</h3>
+        </div>
+
+          
+          <div class="card-body">
+          <form method="post">
+              {% csrf_token %}
+    <div class="form-group row">
+      <label for="id_stone2" class="col-sm-4 col-form-label">Stone</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_stone2" name="stone2">
+          <label class="custom-control-label" for="id_stone2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_ear2" class="col-sm-4 col-form-label">Ear</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_ear2" name="ear2">
+          <label class="custom-control-label" for="id_ear2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_neck2" class="col-sm-4 col-form-label">Neck</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_neck2" name="neck2">
+          <label class="custom-control-label" for="id_neck2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_cloud2" class="col-sm-4 col-form-label">Cloud</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_cloud2" name="cloud1">
+          <label class="custom-control-label" for="id_cloud2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_foot2" class="col-sm-4 col-form-label">Foot</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_foot2" name="foot2">
+          <label class="custom-control-label" for="id_foot2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_seed2" class="col-sm-4 col-form-label">Seed</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_seed2" name="seed2">
+          <label class="custom-control-label" for="id_seed2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_tongue2" class="col-sm-4 col-form-label">Tongue</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_tongue2" name="tongue2">
+          <label class="custom-control-label" for="id_tongue2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_sand2" class="col-sm-4 col-form-label">Sand</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_sand2" name="sand2">
+          <label class="custom-control-label" for="id_sand2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_fire2" class="col-sm-4 col-form-label">Fire</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_fire2" name="fire2">
+          <label class="custom-control-label" for="id_fire2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_nose2" class="col-sm-4 col-form-label">Nose</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_nose2" name="nose2">
+          <label class="custom-control-label" for="id_nose2"></label>
+        </div>
+      </div>
+    </div>
+        <div class="form-group row">
+      <label for="id_tree2" class="col-sm-4 col-form-label">Tree</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_tree2" name="tree2">
+          <label class="custom-control-label" for="id_tree2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_hand2" class="col-sm-4 col-form-label">Hand</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_hand2" name="hand2">
+          <label class="custom-control-label" for="id_hand2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_wind2" class="col-sm-4 col-form-label">Wind</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_wind2" name="wind2">
+          <label class="custom-control-label" for="id_wind2"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_knee2" class="col-sm-4 col-form-label">Knee</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_knee2" name="knee2">
+          <label class="custom-control-label" for="id_knee2"></label>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+  </div>
+  </div></div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      
+    <div class="col-sm-4">
+
+      <div class="card">
+        <div <h3 class="card-title">Trial 3</h3>
+        </div>
+
+          
+          <div class="card-body">
+          <form method="post">
+              {% csrf_token %}
+    <div class="form-group row">
+      <label for="id_stone1" class="col-sm-4 col-form-label">Stone</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_stone3" name="stone3">
+          <label class="custom-control-label" for="id_stone3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_ear3" class="col-sm-4 col-form-label">Ear</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_ear3" name="ear3">
+          <label class="custom-control-label" for="id_ear3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_neck3" class="col-sm-4 col-form-label">Neck</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_neck3" name="neck3">
+          <label class="custom-control-label" for="id_neck3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_cloud3" class="col-sm-4 col-form-label">Cloud</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_cloud3" name="cloud3">
+          <label class="custom-control-label" for="id_cloud3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_foot3" class="col-sm-4 col-form-label">Foot</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_foot3" name="foot3">
+          <label class="custom-control-label" for="id_foot3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_seed3" class="col-sm-4 col-form-label">Seed</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_seed3" name="seed3">
+          <label class="custom-control-label" for="id_seed3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_tongue3" class="col-sm-4 col-form-label">Tongue</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_tongue3" name="tongue3">
+          <label class="custom-control-label" for="id_tongue3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_sand3" class="col-sm-4 col-form-label">Sand</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_sand3" name="sand3">
+          <label class="custom-control-label" for="id_sand3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_fire3" class="col-sm-4 col-form-label">Fire</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_fire3" name="fire3">
+          <label class="custom-control-label" for="id_fire3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_nose3" class="col-sm-4 col-form-label">Nose</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_nose3" name="nose3">
+          <label class="custom-control-label" for="id_nose3"></label>
+        </div>
+      </div>
+    </div>
+        <div class="form-group row">
+      <label for="id_tree1" class="col-sm-4 col-form-label">Tree</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_tree3" name="tree3">
+          <label class="custom-control-label" for="id_tree3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_hand1" class="col-sm-4 col-form-label">Hand</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_hand3" name="hand3">
+          <label class="custom-control-label" for="id_hand3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_wind3" class="col-sm-4 col-form-label">Wind</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_wind3" name="wind3">
+          <label class="custom-control-label" for="id_wind3"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="id_knee3" class="col-sm-4 col-form-label">Knee</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="id_knee3" name="knee3">
+          <label class="custom-control-label" for="id_knee3"></label>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+  </div>
+  </div>
+  </div></div>
+
+
+</div>
+
+</div>
+
+</body>
+
+<style>
+
+  .btn-card {font-size: 14px;
+    margin: 5px auto; /* Center the card element horizontally and add some top/bottom margin */
+    padding: 5px;
+    text-align: left;
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .btn-card p {
+    margin: 0;
+  }
+
+  input[type=checkbox] {
+    display: none;
+    
+  }
+  
+  input[type=checkbox] + label {
+    display: inline-block;
+    
+    padding: 8px;
+    background-color: #ddd;
+    border-radius: 50px;
+    height: 30px;
+    width: 50px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 2px #333;
+    margin-left: 40px;
+    transition: all 0.3s ease-in-out;
+
+  }
+  
+  input[type=checkbox]:checked + label {
+    background-color: green;
+  }
+  
+  input[type=checkbox] + label::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    top: 5px;
+    box-shadow: 0 0 5px #333;
+    transition: all 0.15s ease-in-out;
+  }
+  
+  input[type=checkbox]:checked + label::before {
+    left: 5px;
+    transform: translateX(18px);
+  }
+  .outer-card {
+    display: flex;
+    padding: 5px;
+    width: calc(33.33% - 10px);
+
+}
+
+
+  .card {
+    font-size: 14px;
+    width: 300px;
+    height: calc(100% - 20px);
+    margin: 1px auto; /* Center the card element horizontally and add some top/bottom margin */
+    padding: 1px;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+    
+  .card-title {
+    background-color: whitesmoke;
+    padding: 5px;
+    margin: 0px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1px;
+    margin: 2px 0;
+  }
+
+  .row {
+    flex-basis: calc(33.33% - 10px);
+    margin: 1px;
+    width: 110%;
+  }
+
+  
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
