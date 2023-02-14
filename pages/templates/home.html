@@ -90,8 +90,8 @@
 
 {% if user.is_authenticated %}
 <li>
-  <div style="font-size: 1.6rem; color: blue; text-align: center; padding-rigth: 20px">
-    Welcome {{ user.first_name }}!
+  <div style="font-size: 1.6rem; color: rgb(19, 110, 255); text-align: center; font-weight: bold; padding-rigth: 20px">
+    Welcome back, {{ user.first_name }}!
   </div>
 {% endif %}
 
@@ -99,6 +99,10 @@
   <div style="font-size: 1.2rem; color: blue; text-align: right; padding-rigth: 20px"> You have successfully logged out.</div>
 {% endif %}
 
+<br>
+<br>
+
+<br>
 
 <div id="carouselExampleControls" class="carousel slide small-carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="7000" >
   <div class="carousel-inner" >
@@ -223,12 +227,12 @@ nav .fa-bars {
   <div>
 <section class="about">
  
-  <br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br> 
+  <br><br><br><br><br><br><br><br><br><br><a id="about"></a>
+  <br><br><br><br><br><br> 
   
   
  
-<em><h1 id="about" >About Us </h1></em>
+<em><h1>About Us </h1></em>
 <p>  We are a group of students and neuropsychologists interested in Cross-cultural Neuropsychology.<br> We are located in Córdoba, Argentina. <br> 
 <!-- Images cards -->
 <div class="container">
@@ -377,13 +381,20 @@ nav .fa-bars {
           
     <section class="Research">
     <em><h1 id="research" >Research </h1></em>
+    <br><br>
 
 
-    we are currently developing cross-cultural validity of <br>The Multicultural Nuropsychological Scale (MUNS),<br> a valid and reliable neuropsychological battery. 
+    <p>we are currently developing cross-cultural validity of <br>The Multicultural Nuropsychological Scale (MUNS),<br> a valid and reliable neuropsychological battery. 
     <br> <br>Make inferences of a person cognitive functioning,<br> <br>¿Best part? It's free
-    <br><br><br><br>
-
+    <br><br><br><br></p>
+    <br><br><br><br><br><br><br><br>
     <style>
+      .Research p {
+        font-size: 18px;
+        line-height: 1.5;
+        color: black;
+        margin-bottom: 20px;
+      }
       .Donate {
         text-align: center;
       }

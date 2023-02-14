@@ -40,7 +40,7 @@
 
 <navbar class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">
-    <img src="{% static 'cortexlogo4.gif' %}" alt="Cortex Logo">
+    <img src="{% static 'cortexlogomunsapp2.gif' %}" style="margin-left: 50px;" alt="Cortex Logo App">
   </a>
   
   <div class="navbar-collapse">
@@ -59,8 +59,8 @@
   </div>
 </navbar>
 
-<form action="{% url 'words_memory_subtest' %}" method="get">
-  <button type="submit">Start Words Memory Subtest</button>
+<form action="{% url 'words_learning_subtest' %}" method="get">
+  <button class="btn btn-primary"; type="submit" style='padding: 20px; margin-left: 30px'>Words Learning Subtest / Inmediate Recall </button>
 </form>
 
 
@@ -97,6 +97,7 @@
 
 .navbar .nav-link {
   font-size: 18px;
+  margin-top: 15px;
   color: black;
   text-decoration: none;
 }

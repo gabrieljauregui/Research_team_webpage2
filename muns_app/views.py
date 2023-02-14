@@ -1,19 +1,24 @@
 #views.py
 from django.shortcuts import render, redirect
-from .forms import words_memory_subtest
+from .forms import WordsLearningSubtestForm, WordsLearningSubtestTrial2Form, WordsLearningSubtestTrial3Form
 
-# muns_app/views.py
-
-def words_memory_subtest_view(request):
+def words_learning_subtest_view(request):
     if request.method == 'POST':
-        form = words_memory_subtest(request.POST)
-        if form.is_valid():
-            # Handle the form submission
-            # ...
-            return redirect('success')
+        form = WordsLearningSubtestForm(request.POST)
+        form2 = WordsLearningSubtestTrial2Form(request.POST)
+        form3 = WordsLearningSubtestTrial3Form(request.POST)
+        if form.is_valid() and form2.is_valid() and form3.is_valid():
+            form.save()
+            form2.save()
+            form3.save()
+            return redirect('home')
     else:
-        form = words_memory_subtest()
-    return render(request, 'muns_app/words_memory_subtest.html', {'form': form})
+        form = WordsLearningSubtestForm()
+        form2 = WordsLearningSubtestTrial2Form()
+        form3 = WordsLearningSubtestTrial3Form()
+    return render(request, 'words_learning_subtest.html', {'form': form, 'form2': form2, 'form3': form3})
+
+
 
 def success_view(request):
     return render(request, 'success.html')
