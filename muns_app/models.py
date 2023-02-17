@@ -51,18 +51,65 @@ class WordsLearningSubtest(models.Model):
     WL_trial3_score = models.IntegerField(default=0)
 
     total_score = models.IntegerField(default=0)
-    
+
     def save(self, *args, **kwargs):
-        self.WL_trial1_score = (1 if self.stone1 == True else 0) + (3 if self.ear1 == True else 0) + (1 if self.neck1 == True else 0) + (3 if self.cloud1 == True else 0) + (1 if self.foot1 == True else 0) + (3 if self.seed1 == True else 0) + (1 if self.tongue1 == True else 0) + (3 if self.sand1 == True else 0) + (1 if self.fire1 == True else 0) + (3 if self.nose1 == True else 0) + (1 if self.tree1 == True else 0) + (3 if self.hand1 == True else 0) + (1 if self.wind1 == True else 0) + (3 if self.knee1 == True else 0)
-        self.WL_trial2_score = (1 if self.stone2 == True else 0) + (3 if self.ear2 == True else 0) + (1 if self.neck2 == True else 0) + (3 if self.cloud2 == True else 0) + (1 if self.foot2 == True else 0) + (3 if self.seed2 == True else 0) + (1 if self.tongue2 == True else 0) + (3 if self.sand2 == True else 0) + (1 if self.fire2 == True else 0) + (3 if self.nose2 == True else 0) + (1 if self.tree2 == True else 0) + (3 if self.hand2 == True else 0) + (1 if self.wind2 == True else 0) + (3 if self.knee2 == True else 0)
-        self.WL_trial3_score = (1 if self.stone3 == True else 0) + (3 if self.ear3 == True else 0) + (1 if self.neck3 == True else 0) + (3 if self.cloud3 == True else 0) + (1 if self.foot3 == True else 0) + (3 if self.seed3 == True else 0) + (1 if self.tongue3 == True else 0) + (3 if self.sand3 == True else 0) + (1 if self.fire3 == True else 0) + (3 if self.nose3 == True else 0) + (1 if self.tree3 == True else 0) + (3 if self.hand3 == True else 0) + (1 if self.wind3 == True else 0) + (3 if self.knee3 == True else 0)
-        self.total_score = self.wl_trial1_score + self.wl_trial2_score + self.wl_trial3_score
+        self.WL_trial1_score = (
+            (1 if self.stone1 == True else 0)
+            + (3 if self.ear1 == True else 0)
+            + (1 if self.neck1 == True else 0)
+            + (3 if self.cloud1 == True else 0)
+            + (1 if self.foot1 == True else 0)
+            + (3 if self.seed1 == True else 0)
+            + (1 if self.tongue1 == True else 0)
+            + (3 if self.sand1 == True else 0)
+            + (1 if self.fire1 == True else 0)
+            + (3 if self.nose1 == True else 0)
+            + (1 if self.tree1 == True else 0)
+            + (3 if self.hand1 == True else 0)
+            + (1 if self.wind1 == True else 0)
+            + (3 if self.knee1 == True else 0)
+        )
+        self.WL_trial2_score = (
+            (1 if self.stone2 == True else 0)
+            + (3 if self.ear2 == True else 0)
+            + (1 if self.neck2 == True else 0)
+            + (3 if self.cloud2 == True else 0)
+            + (1 if self.foot2 == True else 0)
+            + (3 if self.seed2 == True else 0)
+            + (1 if self.tongue2 == True else 0)
+            + (3 if self.sand2 == True else 0)
+            + (1 if self.fire2 == True else 0)
+            + (3 if self.nose2 == True else 0)
+            + (1 if self.tree2 == True else 0)
+            + (3 if self.hand2 == True else 0)
+            + (1 if self.wind2 == True else 0)
+            + (3 if self.knee2 == True else 0)
+        )
+        self.WL_trial3_score = (
+            (1 if self.stone3 == True else 0)
+            + (3 if self.ear3 == True else 0)
+            + (1 if self.neck3 == True else 0)
+            + (3 if self.cloud3 == True else 0)
+            + (1 if self.foot3 == True else 0)
+            + (3 if self.seed3 == True else 0)
+            + (1 if self.tongue3 == True else 0)
+            + (3 if self.sand3 == True else 0)
+            + (1 if self.fire3 == True else 0)
+            + (3 if self.nose3 == True else 0)
+            + (1 if self.tree3 == True else 0)
+            + (3 if self.hand3 == True else 0)
+            + (1 if self.wind3 == True else 0)
+            + (3 if self.knee3 == True else 0)
+        )
         super(WordsLearningSubtest, self).save(*args, **kwargs)
+        self.total_score = (
+            self.WL_trial1_score + self.WL_trial2_score + self.WL_trial3_score
+        )
 
     def __str__(self):
         return f"Word Learning Subtest - Total Score: {self.total_score}"
 
-   
+
 """ stone2 = models.PositiveSmallIntegerField()
     ear2 = models.PositiveSmallIntegerField()
     neck2 = models.PositiveSmallIntegerField()
@@ -95,4 +142,4 @@ class WordsLearningSubtest(models.Model):
     WL_trial3 = models.PositiveSmallIntegerField()
     WL_all_inmediate_trials = models.PositiveSmallIntegerField()
     
-""" 
+"""

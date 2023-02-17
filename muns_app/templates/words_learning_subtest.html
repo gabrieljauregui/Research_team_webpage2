@@ -10,12 +10,40 @@
 
 {% block content %}
 
+
 <style>
 
 h3 {background-color: whitesmoke;}
 
 </style>
   
+
+<body>
+  <h1>Words Learning Subtest Form</h1>
+
+  <h2>Trial 1</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+
+  
+  <h2>Trial 2</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form2.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Trial 3</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form3.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+
+
 <div class="btn-card">
 
 <div style="display: flex; text-aling:left; flex-end;">

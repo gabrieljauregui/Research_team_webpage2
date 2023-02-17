@@ -1,27 +1,37 @@
-#views.py
+# views.py
 from django.shortcuts import render, redirect
-from .forms import WordsLearningSubtestForm, WordsLearningSubtestTrial2Form, WordsLearningSubtestTrial3Form
+from .forms import (
+    WordsLearningSubtestForm,
+    WordsLearningSubtestTrial2Form,
+    WordsLearningSubtestTrial3Form,
+)
+
 
 def words_learning_subtest_view(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = WordsLearningSubtestForm(request.POST)
         form2 = WordsLearningSubtestTrial2Form(request.POST)
         form3 = WordsLearningSubtestTrial3Form(request.POST)
-        if form.is_valid() and form2.is_valid() and form3.is_valid():
+        if form.is_valid():
             form.save()
+            return redirect("words_learning_subtest")
+        if form2.is_valid():
             form2.save()
+            return redirect("words_learning_subtest")
+        if form3.is_valid():
             form3.save()
-            return redirect('home')
+            return redirect("words_learning_subtest")
     else:
         form = WordsLearningSubtestForm()
         form2 = WordsLearningSubtestTrial2Form()
         form3 = WordsLearningSubtestTrial3Form()
-    return render(request, 'words_learning_subtest.html', {'form': form, 'form2': form2, 'form3': form3})
 
+    context = {"form": form, "form2": form2, "form3": form3}
+    return render(request, "words_learning_subtest.html", context)
 
 
 def success_view(request):
-    return render(request, 'success.html')
+    return render(request, "success.html")
 
 
 def menu_view(request):
@@ -31,6 +41,7 @@ def menu_view(request):
         {"name": "Contact", "url_name": "contact"},
     ]
     return render(request, "menu.html", {"menu_items": menu_items})
+
 
 """"
 def forgot_password(request):
@@ -83,4 +94,4 @@ def password_reset_request(request):
         form = PasswordResetRequestForm()
     return render(request, "authenticate/password_reset_form.html", {"form": form})
 
-""" 
+"""
