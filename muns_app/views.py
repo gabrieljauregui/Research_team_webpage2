@@ -5,6 +5,73 @@ from .forms import (
     WordsLearningSubtestTrial2Form,
     WordsLearningSubtestTrial3Form,
 )
+from .models import Protocol
+
+
+def new_protocol_view(request):
+    # Retrieve all Protocol objects from the database
+    protocols = Protocol.objects.all()
+
+    # Render the 'protocols.html' template with the list of protocols
+    return render(request, "new_protocol.html", {"protocols": protocols})
+
+
+def create_protocol(request):
+    if request.method == "POST":
+        # If the request method is POST, extract the protocol data from the form
+        gender = request.POST["gender"]
+        age = request.POST["age"]
+        country = request.POST["country"]
+        city = request.POST["city"]
+        ethnicity = request.POST["ethnicity"]
+        education = request.POST["education"]
+        fluency = request.POST["fluency"]
+        language = request.POST["language"]
+        native_language = request.POST["native_language"]
+        occupation = request.POST["occupation"]
+        income = request.POST["income"]
+        medical_history = request.POST["medical_history"]
+        medication_use = request.POST["medication_use"]
+        drug_history = request.POST["drug_history"]
+        alcohol_history = request.POST["alcohol_history"]
+        covid = request.POST["covid"]
+        participant_type = request.POST["participant_type"]
+
+        # Create a new Protocol object with the extracted data
+        protocol = Protocol.objects.create(
+            gender=gender,
+            age=age,
+            country=country,
+            city=city,
+            ethnicity=ethnicity,
+            education=education,
+            fluency=fluency,
+            language=language,
+            native_language=native_language,
+            occupation=occupation,
+            income=income,
+            medical_history=medical_history,
+            medication_use=medication_use,
+            drug_history=drug_history,
+            alcohol_history=alcohol_history,
+            covid=covid,
+            participant_type=participant_type,
+        )
+
+        # Redirect to the 'protocols' page to see the newly created protocol
+        return HttpResponse(
+            '<h1>Protocol created!</h1><a href="/protocols">Back to Protocols</a>'
+        )
+
+    else:
+        # If the request method is GET, render the 'new_protocol.html' template
+        return render(request, "new_protocol.html")
+
+
+def protocols_view(request):
+    protocols = ['Protocol 1', 'Protocol 2', 'Protocol 3']
+    context = {'protocols': protocols}
+    return render(request, 'protocols.html', context)
 
 
 def words_learning_subtest_view(request):

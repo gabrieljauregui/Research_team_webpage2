@@ -1,111 +1,213 @@
-
-<title> Sign Up </title>
 {% extends 'base.html' %}
-{% block content %}
-<br /><br><br>
-<h1 class="text-center mb-4">Please, Sign up</h1>
+{% load static %}
 
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="box">
-        
-<p class="text-muted">* All fields are required</p>
-<p class="text-muted">* username must be unique</p>
-<p class="text-muted">* password must be at least 8 characters long and contain at least one number and one letter</p>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  </head>
 
-        <form method="post" action="{% url 'signup' %}">
-          {% csrf_token %}
-          <div class="form-group">
-            <label for="username" class="form-label"
-              ><strong>Username</strong></label> <input type="text" name="username" class="form-control" placeholder="Enter your username" required>
-           
-          </div>
-          <div class="form-group">
-            <label for="email" class="form-label"><strong>Email</strong>*</label>
-              <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
-          </div>          
-          <div class="form-group">
-            <label for="password" class="form-label"
-              ><strong>Password</strong>*</label
-            >
-            <input type="password" class="form-control" name="password1" placeholder="Enter your password" required>
-          </div>
-          <div class="form-group">
-            <label for="password_confirm" class="form-label"
-              ><strong>Confirm Password</strong>*</label>
-              <input type="password" class="form-control" name="password2" placeholder="Confirm your password" required>
-          </div>
-          <div class="form-group">
-            <label for="age" class="form-label"><strong>Age</strong></label>
-            <input type="number" class="form-control" name="age" placeholder="Enter your age">
-          </div>
-          <div class="form-group">
-            <label for="first_name" class="form-label"><strong>First Name</strong></label>
-            <input type="text" class="form-control" name="first_name" placeholder="Enter your first name">
-        </div>        
-          <div class="form-group">
-            <label for="last_name" class="form-label"
-              ><strong>Last Name</strong></label
-            >
-            <input type="text" class="form-control" name="last_name" placeholder="Enter your last name">
-          </div>
-          <div class="form-group">
-            <label for="job" class="form-label"><strong>Job</strong></label>
-            <input type="text" class="form-control" name="job" placeholder="Enter your current job or occupation">
-          </div>
-
-          <div class="form-group">
-            <label for="educational_achievement" class="form-label"
-              ><strong>Educational Achievement</strong></label
-            >
-            <input type="text" name="educational_achievement" id="educational_achievement" class="form-control" placeholder="Enter your highest educational achievement" required>
-          </div>
-          <div class="form-group">
-            <label for="description" class="form-label"
-              ><strong>Description</strong></label
-            >
-            <textarea name="description" id="description" class="form-control" placeholder="Enter a brief description about yourself" required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="objectives" class="form-label"
-              ><strong>Objectives</strong></label
-            >
-            <textarea name="objectives" id="objectives" class="form-control" placeholder="Enter your objectives" required></textarea>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Sign up</button>
-          </div>
-          
-        </form>
-      </div>
+  {% block content %}
+  <div class="card-top" style="margin: 20px;">
+    <div class="box-left">
+      <h3 class="text-center mb-4">Please, Sign Up</h3>
+      <p class="text-muted">* All fields are required</p>
+      <p class="text-muted">* Username must be unique</p>
+      <p class="text-muted">* Password must be at least 8 characters long and contain at least one number and one letter</p>
+      <style> p {font-size: 18px;} </style>
     </div>
   </div>
-</div>
+
+  <div class="container mt-5" style="margin: 20px;">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="box">
+          <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="username" class="form-label"><strong>Username</strong></label> 
+              <input type="text" name="username" class="form-control" placeholder="Enter your username" required style="width: 100%;">
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label"><strong>Email</strong>*</label>
+              <input type="email" class="form-control" name="email" placeholder="Enter your email" required style="width: 100%;">
+            </div>          
+            <div class="form-group">
+              <label for="password" class="form-label"><strong>Password</strong>*</label>
+              <input type="password" class="form-control" name="password1" placeholder="Enter your password" required style="width: 100%;">
+            </div>
+            <div class="form-group">
+              <label for="password_confirm" class="form-label"><strong>Confirm Password</strong>*</label>
+              <input type="password" class="form-control" name="password2" placeholder="Confirm your password" required style="width: 100%;">
+            </div>
+            <div class="form-group">
+              <label for="age" class="form-label"><strong>Age</strong></label>
+              <input type="number" class="form-control" name="age" placeholder="Enter your age" style="width: 100%;">
+            </div>
+            <div class="form-group">
+              <label for="first_name" class="form-label"><strong>First Name</strong></label>
+              <input type="text" class="form-control" name="first_name" placeholder="Enter your first name" required style="width: 100%;">
+            </div>
+            <div class="form-group">
+              <label for="last_name" class="form-label"><strong>Last Name</strong></label>
+              <input type="text" class="form-control" name="last_name" placeholder="Enter your last name" required style="width: 100%;">
+            </div>  
+            <div class="form-group">
+              <label for="educational_achievement" class="form-label"><strong>Educational Achievement</strong></label>
+              <input type="text" class="form-control" name="educational_achievement" placeholder="Enter your educational achievement" style="width: 100%;">
+            </div> 
+            <div class="form-group">
+              <label for="job" class="form-label"><strong>Job</strong></label>
+              <input type="text" class="form-control" name="job" placeholder="Enter your job" style="width: 100%;">
+            </div> 
+            <div class="form-group">
+              <label for="description" class="form-label"><strong>Description</strong></label>
+              <textarea class="form-control" name="description" placeholder="Enter your description" style="width: 100%;"></textarea>
+            </div>  
+            <div class="form-group">
+              <label for="objectives" class="form-label"><strong>Objectives</strong></label>
+              <textarea class="form-control" name="objectives" placeholder="Enter your objectives" style="width: 100%;"></textarea>
+            </div>  
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          </form> 
+          </div>
+          
+            
+
+            
+              </body>
+            
 
 
-<style>
-  body {
-    background-color: whitesmoke;
-  }
-  .box {
-    background-color: white;
-  }
-  /* Add some space between each form group */
-  .form-group {
-      margin-bottom: 1.5rem;
-  }
-  /* Add some space within the input field */
-  .form-control {
-      padding: 0.75rem 0.75rem;
-  }
-  /* Adjust the width of the input field on small screens */
-  @media (max-width: 600px) {
-      .form-control {
-          min-width: 200px;
-      }
+
+              <style>
+
   
-  }
+                /* Add some space between each form group */
+                .form-group {
+                    margin-bottom: 1.5rem;
+                }
+                /* Add some space within the input field */
+                .form-control {
+                    padding: 0.75rem 0.75rem;
+                }
+              
+              
+              
+                .header {
+                  min-height: 200vh;
+                  width: 100%;
+                  background: url("/static/background-image12.png");
+                  background-position: center center;
+              
+                  position: absolute;
+                  margin-right: 600px;
+                  background-color: rgba(0, 0, 0, 0.8);
+                  
+                  background-attachment: fixed;
+                  
+                }
+                
+                .header::before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                  z-index: 0;
+                  width: 100%;
+                  padding-top: 1200px;
+                  background-color: rgba(0, 0, 0, 0.1);
+                  z-index: 0;
+                }
+                
+               .card-top {
+                z-index: 1;
+                padding-left: 300px;
+                }
+                
+                
+                
+                
+              
+                .col-md-6 {
+                  padding-right: 50px;
+                  margin-right: 90px;
+                  margin-top: 10px;
+                  width: 80%;
+                  padding: 30px;
+                  z-index: 1;
+                  
+                  border-radius: 10px;
+                  max-width: 600px;
+                  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+                  position: absolute;
+                  background-color: whitesmoke;
+                  
+                }
+              
+                .box {
+                  margin: 10;
+                  padding: 10;
+                  text-align: left;
+                  align: center;
+                  
+                  z-index: 1;
+                 }
+              
+              
+                 .box-left {
+                  position: relative;
+                  margin: 5px;
+                  padding: 25px;
+                  text-align: left;
+                  margin-top: 70px;
+                  border: 2px solid whitesmoke;
+                  border-radius: 10px;
+                  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+                  background-color: whitesmoke;
+                  z-index: 0;
+                  width: 30%;
+                 }
+                
+   
+                 /* Adjust the width of the input field on small screens */
+                 @media (max-width: 600px) {
+                     .form-control {
+                         width: 100%;
+                         min-width: 0;
+                     }
+                 
+                     .col-md-6 {
+                         margin-right: 0;
+                         margin-top: 20px;
+                         position: static;
+                     }
+                 
+                     .box-left {
+                         margin-top: 20px;
+                         position: static;
+                         border: none;
+                         box-shadow: none;
+                     }
+                 
+                     .header {
+                         margin-right: 0;
+                         height: auto;
+                     }
+                 
+                     .header::before {
+                         display: none;
+                     }
+                 
+                     .card-top {
+                         padding-left: 0;
+                     }
+                 }
 </style>
-</form>
+
 {% endblock %}

@@ -21,108 +21,146 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
 </head>
-<body>
 
+
+  <script>
+    var navLinks = document.getElementById('navLinks');
   
-<!--Javascript for Toggle Menu-->
-
-<script>
-    var navLinks =document.getElementById("navLinks");
-
-    function showMenu(){
+    function showMenu() {
       navLinks.style.right = "0";
     }
-      function hideMenu(){
+    function hideMenu() {
       navLinks.style.right = "-200px";
     }
-   
-
-</script>
+  
+  </script>
+  
+<header>
 
 
 
 
 <!-- This is the background of the whole HTML page --> 
 <style>
-  body {
-   background-color: white;
+  header {
+    background: white;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    height: 92.5vh; /* Set the height of the header to the full viewport height */
+    
   }
 
-  p { color: black;}
-  h1 { color: black}
-  h2 { color: black}
+  .header::before {
+    background: white;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+  }
 
-  
-  .small-carousel {
-    width: 100%;
-    height: 50%;
-    margin: 1px auto;
-    z-index: 1;
+ body {
+  background: white;
+  background-position: center center;
+  background-size: cover
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+  }
+
+
+
+ .small-carousel {
+  display: flex;
+  position: absolute;
+  top: calc(50% - 180px); /* 20px more than center */
+  left: calc(50% - 1010px); /* 100px to the left of center */
+  width: 58%;
+  height: 30%;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .carousel-item img {
-    object-fit: cover;
-    object-position: center;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
-.carousel-caption {
-    position: absolute;
-    top: 0;
-    left: 120hv;
-    color: white;
-    padding: 10px;
-    font-size: 28px;
-    z-index: 1;}
+
+.brainpic_home {
+  margin-left: 18%;
+  position: relative;
+  max-width: 80%;
+  height: auto;
+  margin-right: auto;.
+  background-color: rgba(0, 0, 0, 0.8);
+  background-attachment: fixed;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 768px) {
+
+  header {
+    height: 60vh;
+  }
+  
+  .small-carousel {
+    top: calc(50% - 55px);
+    left: calc(50% - 40%);
+    width: 100%;
+    height: 80%;
+  }
+  
+  .brainpic_home {
+    margin-left: 5%;
+    max-width: 90%;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
 </style>
 
- </body>
+
 
  <!--  Carousel --> 
 
-<br><br><br>
 <script>
   $(document).ready(function(){
    $("#carouselExampleControls").carousel();
  });
 </script>
 
+<div class="col-6 d-flex ">
 
-{% if user.is_authenticated %}
-<li>
-  <div style="font-size: 1.6rem; color: rgb(19, 110, 255); text-align: center; font-weight: bold; padding-rigth: 20px">
-    Welcome back, {{ user.first_name }}!
-  </div>
-{% endif %}
-
-{% if user.logout_successful %}
-  <div style="font-size: 1.2rem; color: blue; text-align: right; padding-rigth: 20px"> You have successfully logged out.</div>
-{% endif %}
-
-<br>
-<br>
-
-<br>
-
-<div id="carouselExampleControls" class="carousel slide small-carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="7000" >
+</div>
+<div> <img class="brainpic_home" src="/static/brainpic_home13.png" alt="brainpic_home"> </div></div>
+<div class="carousel-card">
+<div id="carouselExampleControls" class="carousel slide small-carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="15000" >
   <div class="carousel-inner" >
     <div class="carousel-item active" >
-      <img src="{% static 'carouselImg26.png' %}" class="d-block w-100 img-fluid" alt="carouselImg26" >
-           <div class="carousel-caption d-block w-100" >
-        <span style="background-color: black"> </span>
-        <br>
-        <span style="background-color: lightblue; font-size: 40px" >  <br><br> <em> <em> </span>
-        </p>
-      </div>
+      <img src="{% static 'carousel_img1.png' %}" class="d-block w-100 img-fluid" alt="carouselImg26" >
+        
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'carouselImg26.png' %}" class="d-block w-100 img-fluid" alt="carouselImg33">     
     </div>
     <div class="carousel-item">
       <img src="{% static 'carouselImg34.png' %}" class="d-block w-100 img-fluid" alt="carouselImg33">     
     </div>
-    <div class="carousel-item">
-      <img src="{% static 'carouselImg35.png' %}" class="d-block w-100 img-fluid" alt="carouselImg33">     
-    </div>
+  </div>
 
      <!-- Carousel buttons  --> 
          
@@ -135,8 +173,9 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+</div></div>
 </div>
-
+</header>
   <style>
 
 
@@ -146,14 +185,13 @@
 
      <!-- Images cards -->
 
-  
-  <br><br><br>
-
+<body>
   <div>
 <section class="about">
  
   <br><br><br><br><br><br><br><br><br><br><a id="about"></a>
-  <br><br><br><br><br><br> 
+  <br><br><br><br><br><br> <br><br><br><br><br><br> 
+  
   
   
  
@@ -445,7 +483,7 @@
       text-decoration: none;
       font-size: 32px;
       text-align: left;
-      z-index: 2;
+      z-index: 5;
   }
   }
 </style>
@@ -474,7 +512,7 @@
 
 <section> 
   <div> 
-    <h3> ⓒ By Gabriel Jáuregui and Julian Garione </h3> 
+    <h5>  By Gabriel Jáuregui ⓒ </h> 
   </div>
 </section>
 
@@ -490,45 +528,7 @@
 
 </section>
 
-
+</body>
 
 {% endblock content %}
-
-<!-- About section images   
-<section class="aboutImgs">
-
-    <div class="row">
-        <div class="AboutImgs-col">
-        <img src="static/AboutImg1.png">
-        <div class="layer">
-          <h3>Alzheimer</h3>
-  </div>
-</div>
-</div>
-
-</section>
- 
-  </p>
-</div>
-
---> 
-
- <!-- JavaScript function to make image change
- 
- </html>
- <script>
-  var carousel = document.getElementById('carousel');
-  var items = carousel.getElementsByClassName('carousel-item');
-  
-  var currentItem = 0;
-  
-  setInterval(function() {
-    items[currentItem].style.opacity = 0;
-    currentItem = (currentItem + 1) % items.length;
-    items[currentItem].style.opacity = 1;
-  }, 2500); 
- </Script> 
-
- This is the link to the block of content  --> 
-
 

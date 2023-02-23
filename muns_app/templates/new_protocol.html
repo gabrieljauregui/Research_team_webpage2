@@ -1,0 +1,144 @@
+{% extends "success.html" %} {% block content %}
+
+<h2>New Protocol</h2>
+<form method="POST">
+  {% csrf_token %}
+  <p>
+    <label for="gender">Gender:</label>
+    <select name="gender" id="gender" required>
+      <option value="" selected disabled>Select</option>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="O">Other</option>
+      <option value="U">Unknown/Unreported</option>
+    </select>
+  </p>
+  <p>
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" required />
+  </p>
+  <p>
+    <label for="country">Country:</label>
+    <input type="text" name="country" id="country" required />
+  </p>
+  <p>
+    <label for="city">City:</label>
+    <input type="text" name="city" id="city" required />
+  </p>
+  <p>
+    <label for="ethnicity">Ethnicity:</label>
+    <select name="ethnicity" id="ethnicity" required>
+      <option value="" selected disabled>Select</option>
+      <option value="A">Asian</option>
+      <option value="B">Black</option>
+      <option value="H">Hispanic/Latino</option>
+      <option value="I">Indigenous/Aboriginal</option>
+      <option value="M">Middle Eastern/North African</option>
+      <option value="W">White/Caucasian</option>
+      <option value="O">Other</option>
+      <option value="U">Unknown/Unreported</option>
+    </select>
+  </p>
+  <p>
+    <label for="educational_level">Educational Level:</label>
+    <input
+      type="text"
+      name="educational_level"
+      id="educational_level"
+      required
+    />
+  </p>
+  <p>
+    <label for="reading_fluency">Reading Fluency Level:</label>
+    <input type="text" name="reading_fluency" id="reading_fluency" required />
+  </p>
+  <p>
+    <label for="language">Test Language:</label>
+    <select name="language" id="language" required>
+      <option value="" selected disabled>Select</option>
+      <option value="EN">English</option>
+      <option value="ES">Spanish</option>
+      <option value="FR">French</option>
+      <option value="DE">German</option>
+      <option value="PT">Portuguese</option>
+      <option value="IT">Italian</option>
+      <option value="AR">Arabic</option>
+      <option value="ZH">Chinese (Mandarin)</option>
+      <option value="RU">Russian</option>
+      <option value="KO">Korean</option>
+      <option value="JA">Japanese</option>
+      <option value="FA">Farsi</option>
+      <option value="HI">Hindi</option>
+      <option value="UR">Urdu</option>
+      <option value="OT">Other</option>
+      <option value="U">Unknown/Unreported</option>
+    </select>
+  </p>
+  <p>
+    <label for="native_lg_prof">Native Language Proficiency:</label>
+    <select name="native_lg_prof" id="native_lg_prof" required>
+      <option value="">Select proficiency level</option>
+      <option value="NL">Native-like proficiency</option>
+      <option value="AL">Advanced proficiency</option>
+      <option value="IL">Intermediate proficiency</option>
+      <option value="BL">Basic proficiency</option>
+      <option value="NL">No proficiency</option>
+      <option value="U">Unknown/Unreported</option>
+    </select>
+  </p>
+  <p>
+    <label for="occupation">Occupation:</label>
+    <input type="text" name="occupation" id="occupation" required />
+  </p>
+  <p>
+    <label for="income">Income:</label>
+    <select name="income" id="income" required>
+      <option value="">Select income level</option>
+      <option value="L">Low</option>
+      <option value="M">Medium</option>
+      <option value="H">High</option>
+      <option value="U">Unknown/Unreported</option>
+    </select>
+  </p>
+  <p>
+    <label for="medical_history">Medical History:</label>
+    <input type="text" name="medical_history" id="medical_history" required />
+  </p>
+  <p>
+    <label for="medication_use">Medication Use:</label>
+    <input type="text" name="medication_use" id="medication_use" required />
+  </p>
+  <p>
+    <label for="drug_history">Drug History:</label>
+    <input type="text" name="drug_history" id="drug_history" required />
+  </p>
+  <p>
+    <label for="alcohol_history">Alcohol History:</label>
+    <input type="text" name="alcohol_history" id="alcohol_history" required />
+  </p>
+  <p>
+    <label for="covid">COVID:</label>
+    <select name="covid" id="covid" required>
+      <option value="">Select COVID status</option>
+      <option value="Y">Yes</option>
+      <option value="N">No</option>
+      <option value="U">Unknown/Unreported</option>
+    </select>
+  </p>
+  <p>
+    <label for="participant_group">Participant Group:</label>
+    <select name="participant_group" id="participant_group" required>
+      <option value="">Select participant group</option>
+      <option value="C">Control</option>
+      <option value="CL">Clinical</option>
+      <option value="U">Unknown/Unreported</option>
+    </select>
+  </p>
+  <form method="POST" action="{% url 'protocols' %}">
+    {% csrf_token %}
+    <!-- form fields go here -->
+    <input type="submit" value="Save this protocol" class="hero-btn" />
+  </form>
+</form>
+
+{% endblock %}

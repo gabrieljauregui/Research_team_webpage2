@@ -8,55 +8,30 @@
 
 </head>
 
-<style>     nav {background-color: white;}
-</style>
-<br><br><br><br><br>
-<h1 class="text-center mb-4">Please, log in to continue <h1> 
- 
-<div class="container mt-5">
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6"><div class="box">
 
-        
-
+<div class="login">
+  <div class="container-fluid d-flex align-items-center justify-content-center">
+    <div class="col-md-6">
+      <div class="card p-5">
+        <h3 class="text-center mb-4">Please, log in to continue</h3>
         <form method="post" action="{% url 'login' %}">
-
-
           {% csrf_token %}
-          <div class="form-group"> 
-            <label for="username" class="form-label">Username </label>
-            <input placeholder="Enter your username" required
-              type="text"
-              class="form-control"
-              name="username"
-              id="username"
-              aria-describedby="emailHelp"
-            /><br>
+          <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input placeholder="Enter your username" required type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp" />
           </div>
           <div class="form-group">
-            <label for="password" class="form-label">Password</strong></label>
-            <input placeholder="Enter your password" required
-              type="password"
-              class="form-control"
-              name="password"
-              id="password"
-            />
-            <br />
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-
-
-          <button type="forgot"<a class="btn btn-secondary" style="background-color: rgb(7, 113, 185);">
-           <href="{% url 'password_reset' %}"> Forgot your password? </a>  </button>
-       
-      
-
-
+            <label for="password" class="form-label">Password</label>
+            <input placeholder="Enter your password" required type="password" class="form-control" name="password" id="password" />
+          </div> <br>
+          <button type="submit" class="hero-btn">Submit</button>
+          <button type="forgot" class="hero-btn">
+            <a href="{% url 'password_reset' %}" style="color: black;"> Forgot your password? </a>
+          </button>
+        </form>
       </div>
     </div>
   </div>
-</div>
 </div>
 <body>
   <style>
@@ -66,8 +41,53 @@
     .box {
       background-color: white} 
 
+  
+    .header {
+      min-height: 100vh;
+      width: 100%;
+      background: url("/static/background-image8.png");
+      background-position: center center;
+      background-size: cover
+      position: absolute;
+        
+      
+    }
+    .header::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.1);
+      z-index: 0;
+    }
     
+    
+    .container-fluid.d-flex.align-items-center.justify-content-center {
+    
+      display: flex;
+      width: 75%;
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    .card {
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+      border: 2px solid whitesmoke;}
+    
+    
+    .col-md-6 {
+      margin-left: 0;
+      margin-right: auto;
+      margin-top: -1300px;
+    }
+
+
   </style>
+  
+
+
   </body>
   
 

@@ -1,5 +1,144 @@
 from django.db import models
 
+from django.conf import settings
+
+
+class Protocol(models.Model):
+    GENDER_CHOICES = (
+        ("M", "Male"),
+        ("F", "Female"),
+        ("O", "Other"),
+        ("U", "Unknown/Unreported"),
+    )
+    ETHNICITY_CHOICES = (
+        ("U", "Unknown/Unreported"),
+        ("White", "White"),
+        ("Black or African American", "Black or African American"),
+        ("Asian", "Asian"),
+        ("American Indian or Alaska Native", "American Indian or Alaska Native"),
+        (
+            "Native Hawaiian or Other Pacific Islander",
+            "Native Hawaiian or Other Pacific Islander",
+        ),
+        ("Hispanic or Latino", "Hispanic or Latino"),
+        ("Other", "Other"),
+    )
+    EDUCATION_CHOICES = (
+        ("U", "Unknown/Unreported"),
+        ("Elementary school", "Elementary school"),
+        ("Middle school", "Middle school"),
+        ("High school diploma or equivalent", "High school diploma or equivalent"),
+        ("Some college, no degree", "Some college, no degree"),
+        ("Associate degree", "Associate degree"),
+        ("Bachelor’s degree", "Bachelor’s degree"),
+        ("Graduate or professional degree", "Graduate or professional degree"),
+    )
+    READING_FLUENCY_CHOICES = (
+        ("U", "Unknown/Unreported"),
+        ("Below basic", "Below basic"),
+        ("Basic", "Basic"),
+        ("Intermediate", "Intermediate"),
+        ("Proficient", "Proficient"),
+    )
+    LANGUAGE_CHOICES = (
+        ("English", "English"),
+        ("Spanish", "Spanish"),
+        ("French", "French"),
+        ("German", "German"),
+        ("Chinese", "Chinese"),
+        ("Japanese", "Japanese"),
+        ("Korean", "Korean"),
+        ("Russian", "Russian"),
+        ("Other", "Other"),
+        ("U", "Unknown/Unreported"),
+    )
+    INCOME_CHOICES = (
+        ("Low", "Low"),
+        ("Medium", "Medium"),
+        ("High", "High"),
+        ("U", "Unknown/Unreported"),
+    )
+    MEDICAL_HISTORY_CHOICES = (
+        ("Yes", "Yes"),
+        ("No", "No"),
+        ("U", "Unknown/Unreported"),
+    )
+    DRUGS_HISTORY_CHOICES = (
+        ("Yes", "Yes"),
+        ("No", "No"),
+        ("U", "Unknown/Unreported"),
+    )
+    ALCOHOL_HISTORY_CHOICES = (
+        ("Yes", "Yes"),
+        ("No", "No"),
+        ("U", "Unknown/Unreported"),
+    )
+    COVID_CHOICES = (
+        ("Yes", "Yes"),
+        ("No", "No"),
+        ("U", "Unknown/Unreported"),
+    )
+    PARTICIPANT_GROUP_CHOICES = (
+        ("Control", "Control"),
+        ("Clinical", "Clinical"),
+        ("U", "Unknown/Unreported"),
+    )
+    LANGUAGE_CHOICES = (
+        ("en", "English"),
+        ("es", "Spanish"),
+        ("fr", "French"),
+        ("pt", "Portuguese"),
+        ("other", "Other"),
+        ("unknown", "Unknown/Unreported"),
+    )
+    PARTICIPANT_CHOICES = (
+        ("C", "Control"),
+        ("P", "Clinical"),
+        ("O", "Other"),
+        ("U", "Unknown/Unreported"),
+    )
+
+    language = models.CharField(
+        max_length=50, choices=LANGUAGE_CHOICES, default="unknown"
+    )
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default="U")
+    age = models.IntegerField(blank=True, null=True)
+    country = models.CharField(max_length=50, blank=True, null=True)
+    city = models.CharField(max_length=50, blank=True, null=True)
+    ethnicity = models.CharField(max_length=50, choices=ETHNICITY_CHOICES, default="U")
+    education = models.CharField(max_length=50, choices=EDUCATION_CHOICES, default="U")
+    reading_fluency = models.CharField(
+        max_length=50, choices=READING_FLUENCY_CHOICES, default="U"
+    )
+    first_language = models.CharField(
+        max_length=50, choices=LANGUAGE_CHOICES, default="Unknown/Unreported"
+    )
+    occupation = models.CharField(max_length=50, default="Unknown/Unreported")
+    income = models.CharField(
+        max_length=50, choices=INCOME_CHOICES, default="Unknown/Unreported"
+    )
+    medical_history = models.TextField(default="Unknown/Unreported")
+    medication_use = models.TextField(default="Unknown/Unreported")
+    drug_history = models.TextField(default="Unknown/Unreported")
+    alcohol_history = models.TextField(default="Unknown/Unreported")
+    covid = models.BooleanField(default=False)
+    covid_times = models.IntegerField(default=0)
+    participant_group = models.CharField(
+        max_length=50, choices=PARTICIPANT_CHOICES, default="Unknown/Unreported"
+    )
+
+
+class Protocols_list(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="protocols"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
 
 class WordsLearningSubtest(models.Model):
     stone1 = models.BooleanField(default=False)

@@ -1,0 +1,14 @@
+{% extends "success.html" %} {% block content %}
+
+<h2>My protocols list</h2>
+
+<table class="table table-striped">
+  <h1>Protocols</h1>
+  <ul>
+    {% for protocol in protocols %}
+    <li>{{ protocol }}</li>
+    {% endfor %}
+  </ul>
+
+  {% endblock %}
+</table>
