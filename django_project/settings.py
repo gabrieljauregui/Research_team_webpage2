@@ -16,6 +16,7 @@ from django.conf import settings
 import os
 from django.contrib.messages import constants as messages
 
+
 settings.configure()
 
 MESSAGE_TAGS = {
