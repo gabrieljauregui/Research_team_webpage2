@@ -26,6 +26,8 @@ MESSAGE_TAGS = {
     messages.ERROR: "alert-danger",
 }
 
+CSRF_TRUSTED_ORIGINS = ["https://researchteamwebpage-production-070f.up.railway.app"]
+
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
@@ -43,7 +45,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://researchteamwebpage-production-070f.up.railway.app"]
 
 
 # Application definition
@@ -173,7 +175,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "accounts.MyUser"
 
-DEFAULT_CHARSET = "utf8"
+DEFAULT_CHARSET = "utf-8"
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
