@@ -105,7 +105,7 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASE_URL = "PGPASSWORD=tVU0PW3bvIidOzsEQdQU psql -h containers-us-west-18.railway.app -U postgres -p 7231 -d railway"
+DATABASE_URL = "postgresql://postgres:tVU0PW3bvIidOzsEQdQU@containers-us-west-18.railway.app:7231/railway"
 
 
 DATABASES = {
