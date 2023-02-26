@@ -45,9 +45,9 @@
   header {
     background: white;
     background-size: cover;
-    display: flex;
+
     justify-content: center;
-    height: 92.5vh; /* Set the height of the header to the full viewport height */
+    height: 100vh; /* Set the height of the header to the full viewport height */
     
   }
 
@@ -60,7 +60,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 0;
   }
 
@@ -74,25 +74,23 @@
   }
 
 
-
- .small-carousel {
-  display: flex;
-  position: absolute;
-  top: calc(50% - 180px); /* 20px more than center */
-  left: calc(50% - 1010px); /* 100px to the left of center */
-  width: 58%;
-  height: 30%;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
-
-.carousel-item img {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
+  .small-carousel {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 50%;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    margin-top: 50px; 
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
 
 
 .brainpic_home {
@@ -146,7 +144,7 @@
 <div class="col-6 d-flex ">
 
 </div>
-<div> <img class="brainpic_home" src="/static/brainpic_home13.png" alt="brainpic_home"> </div></div>
+
 <div class="carousel-card">
 <div id="carouselExampleControls" class="carousel slide small-carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="15000" >
   <div class="carousel-inner" >
