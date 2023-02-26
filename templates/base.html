@@ -88,7 +88,7 @@
 <div class="welcome-message" box="welcome">
   {% if user.is_authenticated %}
   <li>
-    <div style="font-size: 1.6rem; color: rgb(19, 110, 255); text-align: center; font-weight: bold; padding: 50px; padding-top: 20px; position: flex;"> Welcome back, {{ user.first_name }}!
+    <div style="font-size: 1.6rem; color: rgb(19, 110, 255); text-align: center; font-weight: bold; padding: 50px; padding-top: 20px; position: flex;"> Welcome back, {{ user.first_name }} {{ user.last_name }}!
     </div>
   {% endif %}
   
