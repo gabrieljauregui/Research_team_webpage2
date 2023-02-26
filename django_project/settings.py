@@ -71,6 +71,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -109,8 +110,9 @@ DATABASE_URL = "postgresql://postgres:tVU0PW3bvIidOzsEQdQU@containers-us-west-18
 
 
 DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=500),
 }
+
 """
 
 DATABASES = {
