@@ -15,7 +15,7 @@ from decouple import config
 from django.conf import settings
 import os
 from django.contrib.messages import constants as messages
-from django import dj_database_url
+import dj_database_url
 
 settings.configure()
 
