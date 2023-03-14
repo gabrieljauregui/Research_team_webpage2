@@ -67,8 +67,14 @@
             <a class="nav-link" href="#contact" onclick="hideMenu()">Contact</a>
           </li>
           <li>
-            <a class="nav-link" href="{% url 'menu' %}" target="_blank">MUNS App</a>
+            
+            <a class="nav-link" href="{% url 'menu' %}" target="_blank"  onclick="{% if not request.user.is_authenticated %}
+               alert('You need to log in to use the MUNS Scoring Sheet.');
+               return false;
+           {% endif %}">MUNS App</a>
           </li>        
+
+          
         </ul>
 
         <div class="nav-user">
